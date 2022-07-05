@@ -1,0 +1,30 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: centos8
+    image: centos:8
+    pre_build_image: true
+lint:
+  'set -e ansible-lint'
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
+scenario:
+  test_sequence:
+    - dependency
+    - lint
+    - cleanup
+    - destroy
+    - syntax
+    - create
+    - converge
+    - prepare
+    - idempotence
+    - side_effect
+    - verify
+    - cleanup
+    - destroy
