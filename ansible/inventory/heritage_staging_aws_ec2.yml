@@ -17,7 +17,7 @@ keyed_groups:
     prefix: tag_Application
     separator: "_"
   - key: tags.Application
-    prefix: live_Application
+    prefix: staging_Application
     separator: "_"
 
 hostnames: private-ip-address
