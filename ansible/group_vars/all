@@ -1,0 +1,9 @@
+oracle_logs_log_export_list:
+  - name: "alert"
+    path: "/u01/app/oracle/diag/rdbms/{{ oracle_logs_ora_sid|lower }}/{{ oracle_logs_ora_sid }}/trace/alert_{{ oracle_logs_ora_sid }}.log"
+  - name: "audit"
+    path: "/u01/app/oracle/admin/{{ oracle_logs_ora_sid }}/adump/{{ oracle_logs_ora_sid }}_ora_*.aud"
+  - name: "listener"
+    path: "/u01/app/oracle/diag/tnslsnr/{{ ansible_facts['hostname'] }}/{{ oracle_logs_ora_listener }}/alert/log.xml"
+  - name: "trace"
+    path: "/u01/app/oracle/diag/rdbms/{{ oracle_logs_ora_sid|lower }}/{{ oracle_logs_ora_sid }}/trace/{{ oracle_logs_ora_sid }}_ora_*.trc"

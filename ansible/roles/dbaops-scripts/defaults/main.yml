@@ -1,0 +1,21 @@
+---
+# main defaults for dbaops-scripts
+dbaops_scripts_install_dir: "/home/oracle/scripts"
+dbaops_scripts_default_owner: "oracle"
+dbaops_scripts_default_group: "dba"
+
+# dbaops_scripts:
+# - script_name:  Name of the script to install, must be present in {{ role_path }}/files/
+#                 Required
+#   owner:        System user that will own the file. If not set, dbaops_scripts_default_owner is used
+#                 Optional
+#   group:        System group that will own the file. If not set, dbaops_scripts_default_group is used
+#                 Optional
+
+dbaops_scripts:
+  - script_name: "S3_rman_arch_backup.ksh"
+  - script_name: "S3_rman_hk.ksh"
+  - script_name: "S3_rman_level0_backup.ksh"
+  - script_name: "S3_rman_level1_backup.ksh"
+  - script_name: "config_backup.sh"
+  - script_name: "database_check.sh"

@@ -1,0 +1,11 @@
+---
+
+- name: Install DBA Support Scripts
+  copy:
+    src: "{{ item.script_name }}"
+    dest: "{{ dbaops_scripts_install_dir }}/{{ item.script_name }}
+    owner: "{{ item.owner | default(dbaops_scripts_default_owner) }}"
+    group: "{{ item.group | default(dbaops_scripts_default_group) }}"
+    mode: 0755
+  with_items:
+    - {{ dbaops_scripts }}
