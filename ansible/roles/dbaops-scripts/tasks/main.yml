@@ -3,9 +3,24 @@
 - name: Install DBA Support Scripts
   copy:
     src: "{{ item.script_name }}"
-    dest: "{{ dbaops_scripts_install_dir }}/{{ item.script_name }}
+    dest: "{{ dbaops_scripts_install_dir }}/{{ item.script_name }}"
     owner: "{{ item.owner | default(dbaops_scripts_default_owner) }}"
     group: "{{ item.group | default(dbaops_scripts_default_group) }}"
     mode: 0755
   with_items:
-    - {{ dbaops_scripts }}
+    - "{{ dbaops_scripts }}"
+
+- name: Set crontab entries
+  cron:
+    name: "{{ item.script_name }}"
+    user: "{{ item.cron_user | default(dbaops_scripts_default_cron_user) }}"
+    job: "{{ dbaops_scripts_install_dir }}/{{ item.script_name }} {{ item.cron_arguments | default('') }}"
+    minute: "{{ item.cron_minute | default('0') }}"
+    hour: "{{ item.cron_hour | default('0') }}"
+    day: "{{ item.cron_day | default('*') }}"
+    month: "{{ item.cron_month | default('*') }}"
+    weekday: "{{ item.cron_weekday | default('*') }}"
+    state: "{{ 'present' if (item.cron_enable is defined and item.cron_enable) else 'absent' }}"
+    cron_file: "dbaops-cron"
+  with_items:
+    - "{{ dbaops_scripts }}"
