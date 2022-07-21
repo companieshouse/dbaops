@@ -4,7 +4,7 @@ A repository for Ansible code and resources for use by the DBA Ops team.
 
 ## ansible
 
-The `ansible` directory contains all the code necessary to deploy configuration to the Chips DB EC2 instances. It is configured in a way to be executed via CI tooling and not directly.
+The `ansible` directory contains all the code necessary to deploy configuration to the Oracle DB EC2 instances. It is configured in a way to be executed via CI tooling and not directly.
 
 
 ### roles
