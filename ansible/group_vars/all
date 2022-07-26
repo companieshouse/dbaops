@@ -7,3 +7,11 @@ oracle_logs_log_export_list:
     path: "/u01/app/oracle/diag/tnslsnr/{{ ansible_facts['hostname'] }}/{{ oracle_logs_ora_listener }}/alert/log.xml"
   - name: "trace"
     path: "/u01/app/oracle/diag/rdbms/{{ oracle_logs_ora_sid|lower }}/{{ oracle_logs_ora_sid }}/trace/{{ oracle_logs_ora_sid }}_ora_*.trc"
+
+dbaops_scripts:
+  - script_name: "S3_rman_arch_backup.ksh"
+  - script_name: "S3_rman_hk.ksh"
+  - script_name: "S3_rman_level0_backup.ksh"
+  - script_name: "S3_rman_level1_backup.ksh"
+  - script_name: "config_backup.sh"
+  - script_name: "database_check.sh"

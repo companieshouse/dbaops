@@ -28,11 +28,3 @@ dbaops_scripts_default_cron_user: "oracle"
 #                 Optional
 #   cron_weekday: Cron-compatible weekday expression. If not set, defaults to '*', ignored if cron_enable is false
 #                 Optional
-
-dbaops_scripts:
-  - script_name: "S3_rman_arch_backup.ksh"
-  - script_name: "S3_rman_hk.ksh"
-  - script_name: "S3_rman_level0_backup.ksh"
-  - script_name: "S3_rman_level1_backup.ksh"
-  - script_name: "config_backup.sh"
-  - script_name: "database_check.sh"
