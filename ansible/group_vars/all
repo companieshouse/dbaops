@@ -1,3 +1,4 @@
+oracle_logs_log_group_prefix: "{{ oracle_logs_service_name }}/oracle"
 oracle_logs_log_export_list:
   - name: "alert"
     path: "/u01/app/oracle/diag/rdbms/{{ oracle_logs_ora_sid|lower }}/{{ oracle_logs_ora_sid }}/trace/alert_{{ oracle_logs_ora_sid }}.log"

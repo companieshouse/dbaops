@@ -2,9 +2,7 @@
 
 oracle_logs_cwagent_service: amazon-cloudwatch-agent
 oracle_logs_cwagent_config_file: "/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.d/file_oracle_logs.json"
-oracle_logs_log_group_prefix: "{{ oracle_logs_service_name }}/oracle"
-
-#oracle_logs_service_name: ""
+oracle_logs_log_group_prefix: "oracle"
 #oracle_logs_log_export_list:
 #  - name: ""
 #    path: ""
