@@ -1,0 +1,19 @@
+{
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+{% for logfile in oracle_logs_log_export_list %}          {
+              "file_path": "{{ logfile['path'] }}",
+              "log_group_name": "{{ oracle_logs_log_group_prefix }}/{{ logfile['name'] }}",
+              "log_stream_name": "{{ ansible_facts['hostname'] }}",
+              "timezone": "Local"
+          }{% if not loop.last %},
+{% endif %}
+{% endfor %}
+
+        ]
+      }
+    }
+  }
+}
