@@ -6,25 +6,5 @@ dbaops_scripts_default_group: "dba"
 dbaops_scripts_default_cron_user: "oracle"
 
 # dbaops_scripts:
-# - script_name:  Name of the script to install, must be present in {{ role_path }}/files/
-#                 Required
-#   owner:        System user that will own the file. If not set, dbaops_scripts_default_owner is used
-#                 Optional
-#   group:        System group that will own the file. If not set, dbaops_scripts_default_group is used
-#                 Optional
-#   cron_enable:  Defines whether the script should have a cron entry created [true|false]
-#                 Optional
-#   cron_user:    Defines the user that the cron will be executed under. If not set, dbaops_scripts_default_cron_user is used
-#                 Optional
-#   cron_minute:  Cron-compatible minute expression. If not set, defaults to '0', ignored if cron_enable is false
-#                 Optional
-#   cron_hour:    Cron-compatible hour expression. If not set, defaults to '0', ignored if cron_enable is false
-#                 Optional
-#   cron_day:     Cron-compatible day-of-the-week expression. If not set, defaults to '*', ignored if cron_enable is false
-#                 Optional
-#   cron_day:     Cron-compatible day-of-the-month expression. If not set, defaults to '*', ignored if cron_enable is false
-#                 Optional
-#   cron_month:   Cron-compatible month expression. If not set, defaults to '*', ignored if cron_enable is false
-#                 Optional
-#   cron_weekday: Cron-compatible weekday expression. If not set, defaults to '*', ignored if cron_enable is false
-#                 Optional
+#  - script_name: ""
+#  - script_name: ""
