@@ -3,7 +3,7 @@ A role to template and install a configuration for Amazon CloudWatch Agent that 
 
 The JSON-formatted configuration file is rendered via a template that loops through the `oracle_logs_log_export_list` hash to define both the log group name and path to the target log files. Any changes to the configration file will trigger a restart of the AWS CloudWatch Agent service.
 
-## Variables
+## Role Variables
 
 | Name                            | Description                                                                                           | Type   |
 |---------------------------------|-------------------------------------------------------------------------------------------------------|--------|
@@ -13,7 +13,7 @@ The JSON-formatted configuration file is rendered via a template that loops thro
 | oracle_logs_log_export_list     | A hash defining the log group `name` and the `path` to the logs that will be pushed to that log group | hash   |
 
 
-### Example variables
+### Variables Example
 
 ```yaml
 oracle_logs_cwagent_service: amazon-cloudwatch-agent
@@ -23,3 +23,7 @@ oracle_logs_log_export_list:
   - name: "alert"
     path: "/u01/app/oracle/diag/rdbms/orasid/ORASID/trace/alert_ORASIDlog"
 ```
+
+## Dependencies
+
+None
