@@ -1,0 +1,23 @@
+plugin: aws_ec2
+boto_profile: heritage-staging-eu-west-2
+
+regions:
+  - eu-west-2
+
+filters:
+  tag:Account: heritage-staging
+  tag:Name:
+    - chips-oltp-db*
+    - chips-rep-db*
+    - staffware-db*
+  instance-state-name: running
+
+keyed_groups:
+  - key: tags.Application
+    prefix: tag_Application
+    separator: "_"
+  - key: tags.Application
+    prefix: staging_Application
+    separator: "_"
+
+hostnames: private-ip-address

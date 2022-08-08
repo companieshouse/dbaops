@@ -1,0 +1,6 @@
+---
+
+- name: restart cloudwatch agent
+  service:
+    name: "{{ oracle_logs_cwagent_service }}"
+    state: restarted
