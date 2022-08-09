@@ -3,5 +3,5 @@ oracle_logs_ora_listener: "listener12102"
 
 dbaops_scripts:
   - script_name: "config_backup.sh"
-  cron_enable: true
-  cron_hour: "18"
+    cron_enable: true
+    cron_hour: "18"
