@@ -1,5 +1,13 @@
 ---
 
+- name: Ensure script installation directory exists
+  file:
+    path: "{{ dbaops_scripts_install_dir }}"
+    owner: "{{ dbaops_scripts_install_dir_owner }}"
+    group: "{{ dbaops_scripts_install_dir_group }}"
+    mode: 0755
+    state: directory
+
 - name: Install DBA Support Scripts
   copy:
     src: "{{ item.script_name }}"

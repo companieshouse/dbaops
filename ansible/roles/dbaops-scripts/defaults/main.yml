@@ -1,6 +1,8 @@
 ---
 # main defaults for dbaops-scripts
 dbaops_scripts_install_dir: "/home/oracle/scripts"
+dbaops_scripts_install_dir_owner: "oracle"
+dbaops_scripts_install_dir_group: "dba"
 dbaops_scripts_default_owner: "oracle"
 dbaops_scripts_default_group: "dba"
 dbaops_scripts_default_cron_user: "oracle"
