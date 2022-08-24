@@ -174,6 +174,8 @@ RUN
 {
 	allocate channel c1aws type sbt parms = 'SBT_LIBRARY=/u01/app/oracle/product/12.1.0.2/db_1/lib/libosbws.so,SBT_PARMS=(OSB_WS_PFILE=/u01/app/oracle/product/12.1.0.2/db_1/dbs/osbws${ORACLE_SID}.ora)';
 	allocate channel c2aws type sbt parms = 'SBT_LIBRARY=/u01/app/oracle/product/12.1.0.2/db_1/lib/libosbws.so,SBT_PARMS=(OSB_WS_PFILE=/u01/app/oracle/product/12.1.0.2/db_1/dbs/osbws${ORACLE_SID}.ora)';
+	allocate channel c3aws type sbt parms = 'SBT_LIBRARY=/u01/app/oracle/product/12.1.0.2/db_1/lib/libosbws.so,SBT_PARMS=(OSB_WS_PFILE=/u01/app/oracle/product/12.1.0.2/db_1/dbs/osbws${ORACLE_SID}.ora)';
+	allocate channel c4aws type sbt parms = 'SBT_LIBRARY=/u01/app/oracle/product/12.1.0.2/db_1/lib/libosbws.so,SBT_PARMS=(OSB_WS_PFILE=/u01/app/oracle/product/12.1.0.2/db_1/dbs/osbws${ORACLE_SID}.ora)';
 	backup incremental level 0 cumulative database format '%d_%s_%p_%T.bkp' tag '${ORACLE_SID}_L${BACKUP_LEVEL}_${BACKUP_START_TIME}';
         backup archivelog all format '%d_%s_%p_%T.ark' tag '${ORACLE_SID}_ARC_LOG_${BACKUP_START_TIME}' delete input;
         backup current controlfile format  '%d_%s_%p_%T.ctf' tag '${ORACLE_SID}_CTL_${BACKUP_START_TIME}';
